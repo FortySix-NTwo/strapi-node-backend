@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/user/:id",
+      "handler": "User.findOne",
+      "config": {
+        "policies": ["global::isPrivate"],
+        "prefix": "",
+        "description": "Find Single User By Id",
+        "tag": {
+          "plugin": "users-permissions",
+          "name": "User",
+          "actionType": "findOne"
+        }
+      }
+    }
+  ]
+}
